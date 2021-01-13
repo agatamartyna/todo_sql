@@ -24,10 +24,13 @@ class Todos:
 
     def get(self, id):
         cur = create_connection("database.db").cursor()
-        cur.execute(f"SELECT * FROM todos WHERE id=?", (id,))
+        cur.execute("SELECT * FROM todos WHERE id=?", (id,))
         rows = cur.fetchall()
         row = list(rows[0])
-        todo = {"id": row[0], "nazwa": row[1], "deadline": row[2], "priotrytet": row[3]}
+        todo = {
+            "id": row[0], "nazwa": row[1],
+            "deadline": row[2], "priotrytet": row[3]
+        }
 
         return todo
 
@@ -60,7 +63,7 @@ class Todos:
     def delete(self, id):
         conn = create_connection("database.db")
         cur = conn.cursor()
-        cur.execute(f'DELETE FROM todos WHERE id=?', (id,))
+        cur.execute('DELETE FROM todos WHERE id=?', (id,))
         conn.commit()
 
 
