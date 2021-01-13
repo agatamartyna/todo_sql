@@ -10,4 +10,3 @@ class TodoForm(FlaskForm):
     priorytet = SelectField(
         "priorytet",
         choices=['bardzo ważne', 'ważne', 'śrenioważne', 'opcjonalne'])
-
