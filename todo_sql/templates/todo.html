@@ -9,14 +9,15 @@
     <form method="POST" action="/todos/{{ todo_id }}/">
         {{ form.hidden_tag() }}
         <table>
-            {% for field in form if field.widget.input_type != 'hidden' %}}
+            {% for field in form if field.widget.input_type != 'hidden' %}
                 <tr>
                     <th>{{ field.label }} {% if field.flags.required %}*{% endif %}</th>
                     <td>{{ field }}</td>
                 </tr>
             {% endfor %}
-        </table>
-        <input type="submit" value="Go">
-    </form>
+        </table><br>
+        <input type="submit" value="Dodaj">
+    </form><br>
+<a href="/todos/{{ todo_id }}/delete"><button>Usuń</button></a>
 </body>
 </html>
