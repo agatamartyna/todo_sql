@@ -24,12 +24,12 @@ def execute_sql(conn, sql):
 if __name__ == "__main__":
     create_todos_sql = """
     CREATE TABLE IF NOT EXISTS todos (
-        id integer PRIMARY KEY, 
-        nazwa text NOT NULL, 
+        id integer PRIMARY KEY,
+        nazwa text NOT NULL,
         deadline text NOT NULL,
         priorytet text
         )
-    """
+        """
     db_file = "database.db"
     conn = create_connection(db_file)
     if conn is not None:
