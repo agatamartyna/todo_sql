@@ -47,4 +47,3 @@ def todo_delete(todo_id):
 
     return render_template("todos.html", form=form,
                            todos=todos.all(), error=error)
-
